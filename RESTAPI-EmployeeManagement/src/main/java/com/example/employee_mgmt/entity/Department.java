@@ -1,0 +1,40 @@
+package com.example.employee_mgmt.entity;
+
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name="departments")
+public class Department {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-incrementing ID
+	private Long id;
+	
+	@Column(nullable=false)
+	private String departmentName;
+	
+	@Column(nullable=false)
+	private String departmentDescription;
+	
+	//One Department → Many Employees
+	//Cascade - Actions performed on deparment affects employees. (Save, Update, Delete)
+	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Employee> employees;
+}

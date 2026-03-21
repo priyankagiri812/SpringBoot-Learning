@@ -1,0 +1,50 @@
+2026-03-21T20:14:18.232+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] c.e.e.RestapiEmployeeMgmtApplication     : Starting RestapiEmployeeMgmtApplication using Java 21.0.8 with PID 2748 (C:\Users\Admin\.ssh\git\SpringBoot-Learning\RESTAPI-EmployeeManagement\target\classes started by Admin in C:\Users\Admin\.ssh\git\SpringBoot-Learning\RESTAPI-EmployeeManagement)
+2026-03-21T20:14:18.237+05:30 DEBUG 2748 --- [RESTAPI-EmployeeManagement] [main] c.e.e.RestapiEmployeeMgmtApplication     : Running with Spring Boot v4.0.4, Spring v7.0.6
+2026-03-21T20:14:18.238+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] c.e.e.RestapiEmployeeMgmtApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-03-21T20:14:19.352+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-21T20:14:19.451+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
+2026-03-21T20:14:20.162+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-21T20:14:20.187+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-21T20:14:20.188+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-21T20:14:20.321+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1999 ms
+2026-03-21T20:14:20.647+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-21T20:14:20.746+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-03-21T20:14:21.452+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-21T20:14:21.506+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-21T20:14:22.116+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d75c604
+2026-03-21T20:14:22.121+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-21T20:14:22.320+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/employee_management]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: employee_management/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-21T20:14:25.865+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-21T20:14:26.080+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-21T20:14:26.300+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-21T20:14:27.472+05:30  WARN 2748 --- [RESTAPI-EmployeeManagement] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-21T20:14:28.578+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-21T20:14:28.588+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [main] c.e.e.RestapiEmployeeMgmtApplication     : Started RestapiEmployeeMgmtApplication in 11.056 seconds (process running for 12.162)
+2026-03-21T20:17:40.424+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-21T20:17:40.425+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-21T20:17:40.430+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-21T20:17:40.799+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-1] c.e.e.controller.DepartmentController    : Starting department creation process. Name: Food & Beverage
+2026-03-21T20:17:41.240+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-1] c.e.e.s.impl.DepartmentServiceImpl       : Department created successfully with ID: 7
+2026-03-21T20:18:44.554+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-5] c.e.e.controller.DepartmentController    : Fetching department with ID: 7
+2026-03-21T20:18:44.985+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-5] c.e.e.s.impl.DepartmentServiceImpl       : Department fetched successfully: Food & Beverage
+2026-03-21T20:19:17.258+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-6] c.e.e.controller.DepartmentController    : Fetching all departments
+2026-03-21T20:19:17.869+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-6] c.e.e.s.impl.DepartmentServiceImpl       : Total departments found: 6
+2026-03-21T20:20:06.822+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-7] c.e.e.controller.DepartmentController    : Fetching department with ID: 8
+2026-03-21T20:20:06.830+05:30 ERROR 2748 --- [RESTAPI-EmployeeManagement] [http-nio-8080-exec-7] c.e.e.s.impl.DepartmentServiceImpl       : Department not found with ID: 8
+2026-03-21T20:22:09.804+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-03-21T20:22:09.810+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [RMI TCP Connection(17)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-21T20:22:09.821+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-21T20:22:09.832+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-21T20:22:09.836+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-21T20:22:09.847+05:30  INFO 2748 --- [RESTAPI-EmployeeManagement] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
