@@ -11,15 +11,31 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.example.todo_mgmt.security.JwtAuthenticationEntryPoint;
+import com.example.todo_mgmt.security.JwtAuthenticationFilter;
 
 import lombok.AllArgsConstructor;
 
 @Configuration
 @EnableMethodSecurity
-@AllArgsConstructor
 public class SpringSecurityConfig {
 
 	private UserDetailsService userDetailsService;
+
+	private JwtAuthenticationEntryPoint authenticationEntryPoint;
+	
+	private JwtAuthenticationFilter authenticationFilter;
+	
+	
+	public SpringSecurityConfig(UserDetailsService userDetailsService,
+			JwtAuthenticationEntryPoint authenticationEntryPoint, JwtAuthenticationFilter authenticationFilter) {
+		super();
+		this.userDetailsService = userDetailsService;
+		this.authenticationEntryPoint = authenticationEntryPoint;
+		this.authenticationFilter = authenticationFilter;
+	}
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -51,6 +67,11 @@ public class SpringSecurityConfig {
 
 				// Enable Basic Authentication
 				.httpBasic(Customizer.withDefaults());
+		
+		http.exceptionHandling( exception -> exception
+				.authenticationEntryPoint(authenticationEntryPoint));
+		
+		http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
 		return http.build();
 	}

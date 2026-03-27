@@ -2,6 +2,8 @@ package com.example.todo_mgmt.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,6 +23,8 @@ import com.example.todo_mgmt.service.ToDoService;
 @RestController
 @RequestMapping("/api/todos")
 public class ToDoController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ToDoController.class);
 
 	private ToDoService todoService;
 
@@ -28,12 +32,14 @@ public class ToDoController {
 		super();
 		this.todoService = todoService;
 	}
+	
 
 	// Create ToDo
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping
 	public ResponseEntity<ToDoDTO> addToDo(@RequestBody ToDoDTO dto) {
 
+		
 		return new ResponseEntity<>(todoService.addTodo(dto), HttpStatus.CREATED);
 	}
 
@@ -41,7 +47,7 @@ public class ToDoController {
 	@PreAuthorize("hasAnyRole('ADMIN','USER')")
 	@GetMapping("/{id}")
 	public ResponseEntity<ToDoDTO> getToDo(@PathVariable Long id) {
-
+		logger.info("Fetching ToDo with ID: {}", id);
 		return new ResponseEntity<>(todoService.getTodo(id), HttpStatus.OK);
 	}
 
@@ -49,7 +55,7 @@ public class ToDoController {
 	@PreAuthorize("hasAnyRole('ADMIN','USER')")
 	@GetMapping
 	public ResponseEntity<List<ToDoDTO>> getAllToDo() {
-
+		logger.info("Fetching All ToDos: {}");
 		return new ResponseEntity<List<ToDoDTO>>(todoService.getAllTodo(), HttpStatus.OK);
 	}
 
@@ -57,7 +63,7 @@ public class ToDoController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/{id}")
 	public ResponseEntity<ToDoDTO> updateToDo(@PathVariable Long id, @RequestBody ToDoDTO dto) {
-
+		logger.info("Updating department with ID: {}", id);
 		return new ResponseEntity<>(todoService.updateTodo(id, dto), HttpStatus.CREATED);
 	}
 
@@ -66,6 +72,7 @@ public class ToDoController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteToDo(@PathVariable Long id) {
 
+		logger.info("Deleting department with ID: {}", id);
 		todoService.deleteToDo(id);
 
 		return ResponseEntity.ok("ToDo Deleted.");
@@ -76,7 +83,6 @@ public class ToDoController {
 	@PreAuthorize("hasAnyRole('ADMIN','USER')")
 	@PatchMapping("/{id}/complete")
 	public ResponseEntity<ToDoDTO> completeToDo(@PathVariable Long id) {
-
 		return new ResponseEntity<>(todoService.completeTodo(id), HttpStatus.OK);
 	}
 
