@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Saved Successful.</title>
+</head>
+<body>
+	<h1>Student Saved Successful.</h1>
+	<h3>Displaying Student Details: </h3>
+	<div align="center">
+		<p>First Name : <strong th:text="${student.firstName}"></strong></p>
+		<p>Last Name : <strong th:text="${student.lastName}"></strong></p>
+		<p>Email : <strong th:text="${student.email}"></strong></p>
+	</div>
+</body>
+</html>

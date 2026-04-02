@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+        
+	    .btn {
+	    background-color: #007bff;  /* blue */
+	    color: white;
+	    padding: 6px 12px;
+	    border: none;
+	    border-radius: 4px;
+	    cursor: pointer;
+	    font-size: 14px;
+		}
+		
+    </style>
+</head>
+
+<body>
+
+<h2>Student List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.firstName}"></td>
+            <td th:text="${student.lastName}"></td>
+            <td th:text="${student.email}"></td>
+            <td>
+				<a class="btn btn-primary" th:href="@{/students/{studentId}/edit(studentId=${student.id})}">Edit</a>
+				<a class="btn btn-danger" th:href="@{/students/{studentId}/delete(studentId=${student.id})}">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+
+</body>
+</html>
